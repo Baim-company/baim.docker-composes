@@ -1,0 +1,16 @@
+networks:
+  default:
+    driver: bridge
+
+services:
+  ms-api-gateway:
+    image: aykhan151618/baim.ms-api-gateway
+    build:
+      context: ./BaimGateway.API
+      dockerfile: Dockerfile
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    networks:
+      - default

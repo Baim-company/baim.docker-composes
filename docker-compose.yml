@@ -1,0 +1,14 @@
+networks:
+  default:
+    driver: bridge
+
+services:
+  baim-frontend:
+    container_name: frontend
+    build:
+      context: ./FrontNextJs
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - default

@@ -2,6 +2,7 @@ networks:
   shared_network:
     external: true 
 
+
 services:
   vacancy.db:
     image: postgres:latest

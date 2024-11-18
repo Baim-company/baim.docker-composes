@@ -1,6 +1,6 @@
 networks:
-  default:
-    driver: bridge
+  shared_network:
+    external: true
 
 services:
   marketing.db:
@@ -13,7 +13,7 @@ services:
     ports:
       - "5433:5432"
     networks:
-      - default
+      - shared_network
     volumes:
       - marketing.db.data:/var/lib/postgresql/data
 
@@ -27,12 +27,11 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - CONNECTION_STRING=Host=marketing.db;Database=BaimMarketing;Username=postgres;Password=admin;Port=5432;
     networks:
-      - default
+      - shared_network
     ports:
       - "8081:8080"
     depends_on:
       - marketing.db
-
 
 volumes:
    marketing.db.data:

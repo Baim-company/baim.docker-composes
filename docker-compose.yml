@@ -1,6 +1,6 @@
 networks:
-  default:
-    driver: bridge
+  shared_network:
+    external: true
 
 services:
   personalaccount.db:
@@ -13,7 +13,7 @@ services:
     ports:
       - "5435:5432"
     networks:
-      - default
+      - shared_network
     volumes:
       - personalaccount.db.data:/var/lib/postgresql/data
 
@@ -27,7 +27,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - CONNECTION_STRING=Host=personalaccount.db;Database=BaimAgile;Username=postgres;Password=admin;Port=5432;
     networks:
-      - default
+      - shared_network
     ports:
       - "8083:8080"
     depends_on:

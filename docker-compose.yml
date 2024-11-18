@@ -2,6 +2,7 @@ networks:
   default:
     driver: bridge
 
+
 services:
   ms-api-gateway:
     image: aykhan151618/baim.ms-api-gateway

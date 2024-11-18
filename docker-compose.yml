@@ -33,5 +33,6 @@ services:
     depends_on:
       - marketing.db
 
+
 volumes:
    marketing.db.data:

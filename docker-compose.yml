@@ -1,7 +1,6 @@
 networks:
-  default:
-    driver: bridge
-
+  shared_network:
+    external: true 
 
 services:
   ms-api-gateway:
@@ -14,4 +13,4 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
     networks:
-      - default
+      - shared_network

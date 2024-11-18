@@ -2,6 +2,7 @@ networks:
   default:
     driver: bridge
 
+
 services:
   vacancy.db:
     image: postgres:latest

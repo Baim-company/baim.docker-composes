@@ -33,7 +33,8 @@ services:
     depends_on:
       - identity.db
     volumes:
-      - /home/Aykhan2004/home/baim/baim-images:/app/baim-images
+      - /home/Aykhan2004/home/baim/baim-images/UserFiles:/app/images/user
+      - /home/Aykhan2004/home/baim/baim-images/DefaultFiles:/app/images/default
       
 volumes:
    identity.db.data:

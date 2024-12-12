@@ -32,7 +32,8 @@ services:
       - "8080:8080"
     depends_on:
       - identity.db
-
+    volumes:
+      - /home/Aykhan2004/home/baim/baim-images/DefaultFiles:/app/images
       
 volumes:
    identity.db.data:

@@ -33,7 +33,7 @@ services:
     depends_on:
       - personalaccount.db
     volumes:
-      - /home/Aykhan2004/home/baim/baim-images:/app/baim-images
+      - /home/Aykhan2004/home/baim/baim-images:/app/images
 
 volumes:
    personalaccount.db.data:

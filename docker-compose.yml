@@ -32,6 +32,41 @@ services:
       - "8083:8080"
     depends_on:
       - personalaccount.db
+      networks:
+  shared_network:
+    external: true 
 
+services:
+  identity.db:
+    image: postgres:latest
+    container_name: identity.db
+    environment:
+      POSTGRES_DB: BaimIdentity
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5436:5432"
+    networks:
+      - shared_network
+    volumes:
+      - identity.db.data:/var/lib/postgresql/data
+ 
+  identity.api:
+    image: aykhan151618/baim.ms-identity:latest
+    container_name: identity.api
+    build:
+      context: ./Identity.API
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - CONNECTION_STRING=Host=identity.db;Database=BaimIdentity;Username=postgres;Password=admin;Port=5432;
+    networks:
+      - shared_network
+    ports:
+      - "8080:8080"
+    depends_on:
+      - identity.db
+    volumes:
+      - /home/Aykhan2004/home/baim/baim-images/DefaultFiles:/app/images
 volumes:
    personalaccount.db.data:

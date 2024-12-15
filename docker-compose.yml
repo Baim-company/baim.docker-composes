@@ -33,7 +33,7 @@ services:
     depends_on:
       - marketing.db
     volumes:
-      - /home/Aykhan2004/home/baim/baim-images/Default:/app/images
+      - /home/Aykhan2004/home/baim/baim-images/DefaultFiles:/app/images
 
 volumes:
    marketing.db.data:

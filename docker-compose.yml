@@ -32,6 +32,8 @@ services:
       - "8081:8080"
     depends_on:
       - marketing.db
+    volumes:
+      - /home/Aykhan2004/home/baim/baim-images:/app/images
 
 volumes:
    marketing.db.data:

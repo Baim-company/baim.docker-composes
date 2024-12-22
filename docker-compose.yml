@@ -39,7 +39,7 @@ services:
       #- /home/Aykhan2004/home/baim/baim-images/DefaultFiles:/app/images/admin
       #- /home/Aykhan2004/home/baim/baim-images/DefaultFiles:/app/images/staff 
       #- /home/Aykhan2004/home/baim/baim-images/DefaultFiles:/app/images/userADmin
-      - /home/Aykhan2004/home/baim/baim-images/DefaultFiles:/app/images/default
+      - /home/azureuser/home/baim/baim-images/DefaultFiles:/app/images/default
       
 volumes:
    identity.db.data:

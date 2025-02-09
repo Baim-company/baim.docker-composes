@@ -32,6 +32,8 @@ services:
       - "8080:8080"
     depends_on:
       - identity.db
+    volumes:
+      - /home/azureuser/home/baim/files/DefaultFiles:/app/images/default
 
 volumes:
    identity.db.data:

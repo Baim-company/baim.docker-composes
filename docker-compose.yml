@@ -34,7 +34,7 @@ services:
     depends_on:
       - vacancy.db
     volumes:
-      - /home/azureuser/home/baim/files/DefaultFiles:/app/images/default
+      - /home/azureuser/home/baim/files:/app/images
 
 volumes:
    vacancy.db.data:

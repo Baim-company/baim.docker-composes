@@ -33,7 +33,7 @@ services:
     depends_on:
       - marketing.db
     volumes:
-      - /home/azureuser/home/baim/baim-images/DefaultFiles:/app/images/default
+      - /home/azureuser/home/baim/files/DefaultFiles:/app/images/default
 
 volumes:
    marketing.db.data:

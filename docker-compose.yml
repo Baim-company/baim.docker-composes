@@ -33,6 +33,8 @@ services:
       - "8082:8080"
     depends_on:
       - vacancy.db
+    volumes:
+      - /home/azureuser/home/baim/files/DefaultFiles:/app/images/default
 
 volumes:
    vacancy.db.data:

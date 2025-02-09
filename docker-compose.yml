@@ -33,7 +33,7 @@ services:
     depends_on:
       - personalaccount.db
     volumes:
-      - /home/azureuser/home/baim/baim-images/DefaultFiles:/app/images/default
+      - /home/azureuser/home/baim/files/DefaultFiles:/app/images/default
 
 volumes:
    personalaccount.db.data:
